@@ -39,7 +39,8 @@ const ProjectSection = ({ project }) => {
         <img
           src={project.image}
           alt={project.title}
-          className="w-full h-full sm:hover:rotate-[-5deg] sm:ml-12 sm:mt-12 sm:rounded-md bg-[transparent] object-cover object-left-top"
+          className="w-full h-full sm:hover:rotate-[-8deg] sm:ml-12 sm:mt-12 sm:rounded-md bg-[transparent] object-cover 
+          transition-all duration-300  sm:object-center object-left-top"
         />
       </div>
     </motion.div>
