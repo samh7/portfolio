@@ -1,21 +1,8 @@
-import React, { useState, useRef } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaPlay } from "react-icons/fa";
 
 const ProjectSection = ({ project }) => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const imageRef = useRef(null);
-
-  const handleMouseMove = (event) => {
-    if (imageRef.current) {
-      const { left, top, width, height } =
-        imageRef.current.getBoundingClientRect();
-      const x = (event.clientX - left) / width;
-      const y = (event.clientY - top) / height;
-      setMousePosition({ x, y });
-    }
-  };
-
   return (
     <motion.div
       className="bg-gray-900 text-white rounded-xl 
@@ -48,23 +35,11 @@ const ProjectSection = ({ project }) => {
       </div>
 
       {/* Right Section */}
-      <div
-        className="w-full order-1 sm:order-2 object-start sm:w-[55%] h-[240px] sm:h-[220px] overflow-hidden"
-        onMouseMove={handleMouseMove}
-        ref={imageRef}
-      >
-        <motion.div
-          className="w-[120%] h-[120%]"
-          style={{
-            backgroundImage: `url(${project.image})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-          animate={{
-            x: `-${mousePosition.x * 20}%`,
-            y: `-${mousePosition.y * 20}%`,
-          }}
-          transition={{ type: "tween", ease: "linear" }}
+      <div className="w-full order-1 sm:order-2 object-start sm:w-[55%] h-[240px] sm:h-[220px] overflow-hidden">
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-full sm:hover:rotate-[-5deg] sm:ml-12 sm:mt-12 sm:rounded-md bg-[transparent] object-cover object-left-top"
         />
       </div>
     </motion.div>
