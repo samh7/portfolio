@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaReact, FaNodeJs, FaJs, FaDatabase } from "react-icons/fa";
+
 import {
   SiCsharp,
   SiSqlite,
@@ -19,6 +20,12 @@ import {
 import ProjectSection from "../components/ProjectSection";
 import Footer from "../components/Footer";
 
+import eShop from "../assets/projects/e-shop-1.png";
+import sunnyShop from "../assets/projects/sunny-shop.png";
+import facebookUi from "../assets/projects/facebook-ui.png";
+import musicPlayer from "../assets/projects/music-player.png";
+import ytUi from "../assets/projects/yt-ui.png";
+import liuShan from "../assets/profile/liu-shan.jpg";
 const HomePage = () => {
   const fadeIn = {
     initial: { opacity: 0, y: 20 },
@@ -51,7 +58,7 @@ const HomePage = () => {
       title: "Capitalympics",
       description:
         "A web application to help users learn about country flags and capitals, offering a focused learning experience based on regions. Built using Vue.js and Tailwind CSS, with backend services hosted via Docker and Nginx.",
-      image: "https://placehold.co/600x400/00FFFF/000000?text=Capitalympics",
+      image: eShop,
       technologies: [
         SiTypescript,
         SiTailwindcss,
@@ -65,7 +72,7 @@ const HomePage = () => {
       title: "DevFlow",
       description:
         "A developer productivity tool that integrates with popular version control systems and project management tools. Built with React and Node.js, it helps streamline the development workflow.",
-      image: "https://placehold.co/600x400/FF00FF/000000?text=DevFlow",
+      image: sunnyShop,
       technologies: [FaReact, FaNodeJs, SiTypescript, SiExpress, SiDocker],
     },
     // {
@@ -78,7 +85,22 @@ const HomePage = () => {
       title: "CodeMentor AI",
       description:
         "An AI-powered coding assistant that provides real-time suggestions and explanations. Built with machine learning models and integrated into popular IDEs.",
-      image: "https://placehold.co/600x400/FFA500/000000?text=CodeMentor+AI",
+      image: facebookUi,
+      technologies: [SiPython, SiTensorflow, FaReact, SiElectron],
+    },
+
+    {
+      title: "CodeMentor AI",
+      description:
+        "An AI-powered coding assistant that provides real-time suggestions and explanations. Built with machine learning models and integrated into popular IDEs.",
+      image: ytUi,
+      technologies: [SiPython, SiTensorflow, FaReact, SiElectron],
+    },
+    {
+      title: "CodeMentor AI",
+      description:
+        "An AI-powered coding assistant that provides real-time suggestions and explanations. Built with machine learning models and integrated into popular IDEs.",
+      image: musicPlayer,
       technologies: [SiPython, SiTensorflow, FaReact, SiElectron],
     },
   ];
@@ -93,11 +115,11 @@ const HomePage = () => {
           >
             <div className="flex items-center">
               <img
-                src="https://placehold.co/50x50"
+                src={liuShan}
                 alt="A placeholder image of Marc Backes"
-                className="rounded-full mr-4"
+                className="rounded-xl mr-4"
               />
-              <h1 className="text-2xl font-bold">Marc Backes</h1>
+              {/* <h1 className="text-2xl font-bold">Marc Backes</h1> */}
             </div>
             {/* coming soon */}
             {/* <nav className="flex space-x-4">
@@ -118,7 +140,7 @@ const HomePage = () => {
 
           <motion.h1
             {...fadeIn}
-            className="text-4xl font-bold mt-8 mb-8 bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent"
+            className="text-4xl font-bold h-12 mt-8 mb-8 bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent"
           >
             Sylvester Sila / Software Engineer
           </motion.h1>
@@ -167,7 +189,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      <Footer fadeIn={fadeIn} />
+      {/* <Footer fadeIn={fadeIn} /> */}
     </div>
   );
 };
