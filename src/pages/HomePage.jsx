@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { FaReact, FaNodeJs, FaJs, FaDatabase } from "react-icons/fa";
+import {
+  FaReact,
+  FaNodeJs,
+  FaJs,
+  FaDatabase,
+  FaInfoCircle,
+} from "react-icons/fa";
 
 import {
   SiCsharp,
@@ -105,6 +111,8 @@ const HomePage = () => {
     },
   ];
 
+  const [showTooltip, setShowTooltip] = useState(false);
+
   return (
     <div className="bg-gradient-to-br from-gray-900 to-black text-white font-roboto min-h-screen">
       <div className="container mx-auto px-4 py-8 flex flex-col items-center">
@@ -113,13 +121,20 @@ const HomePage = () => {
             {...fadeIn}
             className="flex justify-between items-center mb-8"
           >
-            <div className="flex items-center">
-              <img
-                src={liuShan}
-                alt="A placeholder image of Marc Backes"
-                className="rounded-xl mr-4"
-              />
-              {/* <h1 className="text-2xl font-bold">Marc Backes</h1> */}
+            <div className="flex items-center relative">
+              <img src={liuShan} alt="LiuShan" className="rounded-xl mr-4" />
+              <div
+                className="absolute bottom-2 right-6 cursor-pointer"
+                onMouseEnter={() => setShowTooltip(true)}
+                onMouseLeave={() => setShowTooltip(false)}
+              >
+                <FaInfoCircle className="text-white/20 text-xl" />
+              </div>
+              {showTooltip && (
+                <div className="absolute bottom-10 right-4  bg-gray-800/50 text-white p-2  rounded shadow-lg">
+                  Liu Shan - Roamer, HOK
+                </div>
+              )}
             </div>
             {/* coming soon */}
             {/* <nav className="flex space-x-4">
@@ -140,7 +155,7 @@ const HomePage = () => {
 
           <motion.h1
             {...fadeIn}
-            className="text-4xl font-bold h-12 mt-8 mb-8 bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent"
+            className="text-4xl font-bold h-24 sm:h-12  mt-8 mb-8 bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent"
           >
             Sylvester Sila / Software Engineer
           </motion.h1>
