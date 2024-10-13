@@ -30,10 +30,24 @@ const Footer = ({ fadeIn }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isExpanded]);
 
-  const toggleExpanded = () => {
+  const toggleExpanded = (e) => {
+    e.preventDefault(); // Prevent default behavior (like scrolling to top)
+    
+    // Don't minimize when clicking on links or when at the bottom
+    if (e.target.tagName.toLowerCase() === 'a' || isAtBottom) {
+      return;
+    }
+
     if (!isAtBottom) {
       setIsExpanded(!isExpanded);
     }
+  };
+
+  const handleIconClick = (e) => {
+    e.preventDefault(); // Prevent default anchor behavior
+    e.stopPropagation(); // Prevent event from bubbling up
+    // Here you can add custom logic for icon clicks if needed
+    console.log("Icon clicked:", e.currentTarget.href);
   };
 
   return (
@@ -70,13 +84,13 @@ const Footer = ({ fadeIn }) => {
         >
           <p className="mt-2 text-gray-400">© 2024 Sylvester Sila. All rights reserved.</p>
           <div className="mt-4 flex justify-center space-x-4">
-            <a href="#" className="text-gray-400 hover:text-green-400 transition-colors">
+            <a href="#" className="text-gray-400 hover:text-green-400 transition-colors" onClick={handleIconClick}>
               <FaTwitter size={20} />
             </a>
-            <a href="#" className="text-gray-400 hover:text-green-400 transition-colors">
+            <a href="#" className="text-gray-400 hover:text-green-400 transition-colors" onClick={handleIconClick}>
               <FaGithub size={20} />
             </a>
-            <a href="#" className="text-gray-400 hover:text-green-400 transition-colors">
+            <a href="#" className="text-gray-400 hover:text-green-400 transition-colors" onClick={handleIconClick}>
               <FaLinkedin size={20} />
             </a>
           </div>
