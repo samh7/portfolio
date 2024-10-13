@@ -41,7 +41,7 @@ const ProjectSection = ({ project }) => {
           alt={project.title}
           className="w-full h-full sm:hover:rotate-[-8deg] sm:ml-12 sm:mt-12 sm:rounded-md bg-[transparent] object-cover 
           transition-all duration-300  sm:object-center object-left-top"
-        />
+        />F
       </div>
     </motion.div>
   );

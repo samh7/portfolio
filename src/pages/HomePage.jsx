@@ -114,7 +114,7 @@ const HomePage = () => {
   const [showTooltip, setShowTooltip] = useState(false);
 
   return (
-    <div className="bg-gradient-to-br from-gray-900 to-black text-white font-roboto min-h-screen">
+    <div className="bg-gradient-to-br from-gray-900 to-black text-white font-roboto min-h-screen pb-20">
       <div className="container mx-auto px-4 py-8 flex flex-col items-center">
         <div className="w-full max-w-[600px]">
           <motion.div
@@ -204,7 +204,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      {/* <Footer fadeIn={fadeIn} /> */}
+      <Footer fadeIn={fadeIn} />
     </div>
   );
 };
