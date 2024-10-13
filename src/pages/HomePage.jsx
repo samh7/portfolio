@@ -24,6 +24,7 @@ import {
   SiElectron,
 } from "react-icons/si";
 import ProjectSection from "../components/ProjectSection";
+import TheVeldt from "../components/TheVeldt";
 import Footer from "../components/Footer";
 
 import eShop from "../assets/projects/e-shop-1.png";
@@ -40,17 +41,28 @@ const HomePage = () => {
   };
 
   const stackItems = [
-    { name: "C#", icon: <SiCsharp /> },
-    { name: "SQLite", icon: <SiSqlite /> },
-    { name: "JavaScript", icon: <FaJs /> },
     { name: "Elixir", icon: <SiElixir /> },
+    { name: "JavaScript", icon: <FaJs /> },
+    { name: "C#", icon: <SiCsharp /> },
     { name: "Node.js", icon: <FaNodeJs /> },
     { name: "Express.js", icon: <SiExpress /> },
-    // { name: "Angular.js", icon: <SiAngularjs /> },
+    { name: "React", icon: <FaReact /> },
+    { name: "Tailwind CSS", icon: <SiTailwindcss /> },
   ];
 
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+      },
+    },
+  };
   const handleMouseMove = (event, projectIndex) => {
     const { left, top, width, height } =
       event.currentTarget.getBoundingClientRect();
@@ -118,6 +130,7 @@ const HomePage = () => {
       <div className="container mx-auto px-4 py-8 flex flex-col items-center">
         <div className="w-full max-w-[600px]">
           <motion.div
+            variants={itemVariants}
             {...fadeIn}
             className="flex justify-between items-center mb-8"
           >
@@ -154,13 +167,14 @@ const HomePage = () => {
           </motion.div>
 
           <motion.h1
+            variants={itemVariants}
             {...fadeIn}
             className="text-4xl font-bold h-24 sm:h-12  mt-8 mb-8 bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent"
           >
             Sylvester Sila / Software Engineer
           </motion.h1>
 
-          <motion.div {...fadeIn} className="mb-8">
+          <motion.div variants={itemVariants} {...fadeIn} className="mb-8">
             <h2 className="text-2xl font-bold">Welcome.</h2>
             <p className="mt-2">To my humble abode.</p>
             <p className="mt-4">
@@ -188,12 +202,25 @@ const HomePage = () => {
             </p>
           </motion.div>
 
-          <motion.div {...fadeIn} className="mb-8">
-            <h2 className="text-2xl font-bold">Writing.</h2>
-            <p className="mt-2">Blog posts about coding & tech.</p>
+          <motion.div variants={itemVariants} {...fadeIn} className="mb-8">
+            <h2 className="text-2xl font-bold">Stack</h2>
+            <div className="mt-4 flex flex-wrap gap-4">
+              {stackItems.map((item, index) => (
+                <motion.div
+                  key={item.name}
+                  className="flex items-center bg-gray-800 rounded-full px-4 py-2"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                >
+                  <span className="mr-2 text-xl">{item.icon}</span>
+                  <span>{item.name}</span>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
 
-          <motion.div {...fadeIn} className="mb-8">
+          <motion.div variants={itemVariants} {...fadeIn} className="mb-8">
             <h2 className="text-2xl font-bold mb-4">Projects</h2>
             <div className="space-y-6">
               {projects.map((project, index) => (
@@ -201,10 +228,12 @@ const HomePage = () => {
               ))}
             </div>
           </motion.div>
+
+          {/* <TheVeldt /> */}
         </div>
       </div>
 
-      <Footer fadeIn={fadeIn} />
+      <Footer variants={itemVariants} fadeIn={fadeIn} />
     </div>
   );
 };
