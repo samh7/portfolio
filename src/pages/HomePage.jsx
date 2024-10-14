@@ -33,6 +33,7 @@ import facebookUi from "../assets/projects/facebook-ui.png";
 import musicPlayer from "../assets/projects/music-player.png";
 import ytUi from "../assets/projects/yt-ui.png";
 import liuShan from "../assets/profile/liu-shan.jpg";
+import BeautyAndTerror from "../components/BeautyAndTerror";
 const HomePage = () => {
   const fadeIn = {
     initial: { opacity: 0, y: 20 },
@@ -232,7 +233,11 @@ const HomePage = () => {
           {/* <TheVeldt /> */}
         </div>
       </div>
-
+{/*       
+      <div className="mb-8">
+        <BeautyAndTerror />
+      </div> */}
+      
       <Footer variants={itemVariants} fadeIn={fadeIn} />
     </div>
   );

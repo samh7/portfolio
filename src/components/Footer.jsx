@@ -16,7 +16,7 @@ const Footer = ({ fadeIn }) => {
       const isScrollingUp = window.scrollY < lastScrollY;
 
       setIsAtBottom(isBottom);
-      
+
       if (isBottom) {
         setIsExpanded(true);
       } else if (isScrollingUp && isExpanded && !isBottom) {
@@ -26,15 +26,15 @@ const Footer = ({ fadeIn }) => {
       lastScrollY = window.scrollY;
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [isExpanded]);
 
   const toggleExpanded = (e) => {
     e.preventDefault(); // Prevent default behavior (like scrolling to top)
-    
+
     // Don't minimize when clicking on links or when at the bottom
-    if (e.target.tagName.toLowerCase() === 'a' || isAtBottom) {
+    if (e.target.tagName.toLowerCase() === "a" || isAtBottom) {
       return;
     }
 
@@ -55,14 +55,17 @@ const Footer = ({ fadeIn }) => {
       <motion.footer
         layout
         initial={{ borderRadius: 20, width: "40px", height: "40px" }}
-        animate={{ 
+        animate={{
           width: isExpanded ? "min(87vw, 600px)" : "40px",
           height: isExpanded ? "auto" : "40px",
           borderRadius: isExpanded ? 12 : 20,
-          backgroundColor: isAtBottom ? "rgba(17, 24, 39, 1)" : "rgba(17, 24, 39, 0.3)",
+          backgroundColor: isAtBottom
+            ? "rgba(17, 24, 39, 1)"
+            : "rgba(17, 24, 39, 0.3)",
+          color: isAtBottom ? "rgb(156 163 175)" : "rgb(229 231 235",
         }}
-        transition={{ 
-          duration: 0.5, 
+        transition={{
+          duration: 0.5,
           ease: [0.19, 1, 0.22, 1],
         }}
         className="backdrop-blur-md text-white text-center overflow-hidden shadow-lg relative"
@@ -82,15 +85,29 @@ const Footer = ({ fadeIn }) => {
           animate={{ opacity: isExpanded ? 1 : 0 }}
           transition={{ duration: 0.3 }}
         >
-          <p className="mt-2 text-gray-400">© 2024 Sylvester Sila. All rights reserved.</p>
+          <p className="mt-2  mix-blend-difference">
+            © 2024 Sylvester Sila. All rights reserved.
+          </p>
           <div className="mt-4 flex justify-center space-x-4">
-            <a href="#" className="text-gray-400 hover:text-green-400 transition-colors" onClick={handleIconClick}>
+            <a
+              href="#"
+              className=" hover:text-green-400 transition-colors"
+              onClick={handleIconClick}
+            >
               <FaTwitter size={20} />
             </a>
-            <a href="#" className="text-gray-400 hover:text-green-400 transition-colors" onClick={handleIconClick}>
+            <a
+              href="#"
+              className=" hover:text-green-400 transition-colors"
+              onClick={handleIconClick}
+            >
               <FaGithub size={20} />
             </a>
-            <a href="#" className="text-gray-400 hover:text-green-400 transition-colors" onClick={handleIconClick}>
+            <a
+              href="#"
+              className=" hover:text-green-400 transition-colors"
+              onClick={handleIconClick}
+            >
               <FaLinkedin size={20} />
             </a>
           </div>
