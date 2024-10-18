@@ -28,6 +28,7 @@ const ProjectSection = ({ project }) => {
           {project.code !== "" ? (
             <a
               href={project.code}
+              target="_blank"
               className="bg-gray-700 hover:bg-gray-600 text-white text-xs font-bold py-1 px-2 rounded-full flex items-center"
             >
               <FaGithub className="mr-1" /> Code
@@ -42,6 +43,7 @@ const ProjectSection = ({ project }) => {
           )}
           <a
             href={project.live}
+            target="_blank"
             className="bg-gray-700 hover:bg-gray-600 text-white text-xs font-bold py-1 px-2 rounded-full flex items-center"
           >
             <FaPlay className="mr-1" /> Live

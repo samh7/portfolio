@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { FaTwitter, FaGithub, FaLinkedin, FaChevronUp } from "react-icons/fa";
-import { GiMailbox } from "react-icons/gi";
+import { FaChevronUp } from "react-icons/fa";
 import { SiGithub, SiGmail, SiLinkedin } from "react-icons/si";
-import { BiLogoGmail } from "react-icons/bi";
 
 const Footer = ({ fadeIn }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -47,10 +45,8 @@ const Footer = ({ fadeIn }) => {
   };
 
   const handleIconClick = (e) => {
-    e.preventDefault(); // Prevent default anchor behavior
     e.stopPropagation(); // Prevent event from bubbling up
-    // Here you can add custom logic for icon clicks if needed
-    console.log("Icon clicked:", e.currentTarget.href);
+    // Remove the preventDefault to allow the default link behavior
   };
 
   return (
@@ -88,28 +84,32 @@ const Footer = ({ fadeIn }) => {
           animate={{ opacity: isExpanded ? 1 : 0 }}
           transition={{ duration: 0.3 }}
         >
-          <p className="mt-2  mix-blend-difference">
-            © All rights reserved. {new Date().getFullYear()}
-          </p>
+          <p className="mt-2 mix-blend-difference">© All rights reserved.</p>
           <div className="mt-4 flex justify-center space-x-4">
             <a
-              href="https://mailto:sylvestersila6@gmail.com"
-              className=" hover:text-green-400 transition-colors"
+              href="mailto:sylvestersila6@gmail.com"
+              className="hover:text-green-400 transition-colors"
               onClick={handleIconClick}
+              target="_blank"
+              // rel="noopener noreferrer"
             >
               <SiGmail size={20} />
             </a>
             <a
               href="https://github.com/samh7"
-              className=" hover:text-green-400 transition-colors"
+              className="hover:text-green-400 transition-colors"
               onClick={handleIconClick}
+              target="_blank"
+              // rel="noopener noreferrer"
             >
               <SiGithub size={20} />
             </a>
             <a
               href="https://www.linkedin.com/in/sylvester-sila1"
-              className=" hover:text-green-400 transition-colors"
+              className="hover:text-green-400 transition-colors"
               onClick={handleIconClick}
+              target="_blank"
+              // rel="noopener noreferrer"
             >
               <SiLinkedin size={20} />
             </a>
