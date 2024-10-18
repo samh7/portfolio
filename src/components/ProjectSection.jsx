@@ -25,12 +25,27 @@ const ProjectSection = ({ project }) => {
           {project.description}
         </p>
         <div className="flex space-x-2">
-          <button className="bg-gray-700 hover:bg-gray-600 text-white text-xs font-bold py-1 px-2 rounded-full flex items-center">
-            <FaGithub className="mr-1" /> Code
-          </button>
-          <button className="bg-gray-700 hover:bg-gray-600 text-white text-xs font-bold py-1 px-2 rounded-full flex items-center">
+          {project.code !== "" ? (
+            <a
+              href={project.code}
+              className="bg-gray-700 hover:bg-gray-600 text-white text-xs font-bold py-1 px-2 rounded-full flex items-center"
+            >
+              <FaGithub className="mr-1" /> Code
+            </a>
+          ) : (
+            <button
+              // href={project.code}
+              className="border cursor-not-allowed border-gray-700 text-white text-xs font-bold py-1 px-2 rounded-full flex items-center"
+            >
+              <FaGithub className="mr-1" /> Code
+            </button>
+          )}
+          <a
+            href={project.live}
+            className="bg-gray-700 hover:bg-gray-600 text-white text-xs font-bold py-1 px-2 rounded-full flex items-center"
+          >
             <FaPlay className="mr-1" /> Live
-          </button>
+          </a>
         </div>
       </div>
 
@@ -41,7 +56,7 @@ const ProjectSection = ({ project }) => {
           alt={project.title}
           className="w-full h-full sm:hover:rotate-[-8deg] sm:ml-12 sm:mt-12 sm:rounded-md bg-[transparent] object-cover 
           transition-all duration-300  sm:object-center object-left-top"
-        />F
+        />
       </div>
     </motion.div>
   );

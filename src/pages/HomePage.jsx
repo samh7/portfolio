@@ -22,6 +22,10 @@ import {
   SiMongodb,
   SiTensorflow,
   SiElectron,
+  SiPostgresql,
+  SiDotnet,
+  SiJavascript,
+  SiReact,
 } from "react-icons/si";
 import ProjectSection from "../components/ProjectSection";
 import TheVeldt from "../components/TheVeldt";
@@ -32,8 +36,11 @@ import sunnyShop from "../assets/projects/sunny-shop.png";
 import facebookUi from "../assets/projects/facebook-ui.png";
 import musicPlayer from "../assets/projects/music-player.png";
 import ytUi from "../assets/projects/yt-ui.png";
+import onlineEditor from "../assets/projects/online-editor.png";
+import rhythmPlayer from "../assets/projects/rhythmPlayer.png";
 import liuShan from "../assets/profile/liu-shan.jpg";
 import BeautyAndTerror from "../components/BeautyAndTerror";
+
 const HomePage = () => {
   const fadeIn = {
     initial: { opacity: 0, y: 20 },
@@ -42,13 +49,16 @@ const HomePage = () => {
   };
 
   const stackItems = [
-    { name: "Elixir", icon: <SiElixir /> },
     { name: "JavaScript", icon: <FaJs /> },
-    { name: "C#", icon: <SiCsharp /> },
-    { name: "Node.js", icon: <FaNodeJs /> },
-    { name: "Express.js", icon: <SiExpress /> },
     { name: "React", icon: <FaReact /> },
+    { name: "Node.js", icon: <FaNodeJs /> },
     { name: "Tailwind CSS", icon: <SiTailwindcss /> },
+    { name: "PostgreSQL", icon: <SiPostgresql /> },
+    { name: "Elixir", icon: <SiElixir /> },
+    { name: "C#", icon: <SiCsharp /> },
+    { name: "DotNet", icon: <SiDotnet /> },
+    { name: "Python", icon: <SiPython /> },
+    // {}
   ];
 
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -74,53 +84,49 @@ const HomePage = () => {
 
   const projects = [
     {
-      title: "Capitalympics",
+      title: "Shoppie",
       description:
-        "A web application to help users learn about country flags and capitals, offering a focused learning experience based on regions. Built using Vue.js and Tailwind CSS, with backend services hosted via Docker and Nginx.",
+        "An online store built with plain JS and HTML that allows users to browse and purchase clothes. It includes features such as a shopping cart and a checkout process.",
       image: eShop,
       technologies: [
-        SiTypescript,
+        SiJavascript,
         SiTailwindcss,
-        SiNetlify,
-        SiDocker,
-        SiGraphql,
-        SiExpress,
+        // SiNetlify,
+        // SiDocker,
+        // SiGraphql,
+        // SiExpress,
       ],
-    },
-    {
-      title: "DevFlow",
-      description:
-        "A developer productivity tool that integrates with popular version control systems and project management tools. Built with React and Node.js, it helps streamline the development workflow.",
-      image: sunnyShop,
-      technologies: [FaReact, FaNodeJs, SiTypescript, SiExpress, SiDocker],
-    },
-    // {
-    //   title: "EcoTrack",
-    //   description: "An IoT-based environmental monitoring system that collects and analyzes data from various sensors. Utilizes Python for data processing and React for the dashboard interface.",
-    //   image: "https://placehold.co/600x400/00FF00/000000?text=EcoTrack",
-    //   technologies: [FaReact, SiPython, SiMongodb, SiAmazonaws],
-    // },
-    {
-      title: "CodeMentor AI",
-      description:
-        "An AI-powered coding assistant that provides real-time suggestions and explanations. Built with machine learning models and integrated into popular IDEs.",
-      image: facebookUi,
-      technologies: [SiPython, SiTensorflow, FaReact, SiElectron],
+      live: "https://samh7.github.io/online-shop/",
+      code: "https://github.com/samh7/online-shop",
     },
 
     {
-      title: "CodeMentor AI",
+      title: "OnLineEditor",
       description:
-        "An AI-powered coding assistant that provides real-time suggestions and explanations. Built with machine learning models and integrated into popular IDEs.",
-      image: ytUi,
-      technologies: [SiPython, SiTensorflow, FaReact, SiElectron],
+        "An online code editor built with plain JS, HTML, and CSS. It allows users to write, run, and save code snippets.",
+      image: onlineEditor,
+      technologies: [SiJavascript, SiTailwindcss],
+      live: "https://samh7.github.io/online-editor",
+      code: "https://github.com/samh7/online-editor",
+    },
+
+    {
+      title: "Simple Music Player",
+      description:
+        "A simple music player built with plain JS, HTML, and CSS. It allows users to play, pause, and skip songs.",
+      image: musicPlayer,
+      technologies: [SiJavascript, SiTailwindcss],
+      live: "https://samh7.github.io/music_player/",
+      code: "https://github.com/samh7/music_player",
     },
     {
-      title: "CodeMentor AI",
+      title: "Rhythm Player",
       description:
-        "An AI-powered coding assistant that provides real-time suggestions and explanations. Built with machine learning models and integrated into popular IDEs.",
-      image: musicPlayer,
-      technologies: [SiPython, SiTensorflow, FaReact, SiElectron],
+        "A  music player app built with React and Tailwind CSS. It allows users to add song to queue as well as play, pause, repeat, shuffle and skip them.",
+      image: rhythmPlayer,
+      technologies: [SiJavascript, SiReact, SiTailwindcss],
+      live: "https://rythm-player.netlify.app/",
+      code: "",
     },
   ];
 
@@ -137,34 +143,7 @@ const HomePage = () => {
           >
             <div className="flex items-center relative">
               <img src={liuShan} alt="LiuShan" className="rounded-xl mr-4" />
-              <div
-                className="absolute bottom-2 right-6 cursor-pointer"
-                onMouseEnter={() => setShowTooltip(true)}
-                onMouseLeave={() => setShowTooltip(false)}
-              >
-                <FaInfoCircle className="text-white/20 text-xl" />
-              </div>
-              {showTooltip && (
-                <div className="absolute bottom-10 right-4  bg-gray-800/50 text-white p-2  rounded shadow-lg">
-                  Liu Shan - Roamer, HOK
-                </div>
-              )}
             </div>
-            {/* coming soon */}
-            {/* <nav className="flex space-x-4">
-              <a href="#" className="hover:text-green-400 transition-colors">
-                Home
-              </a>
-              <a href="#" className="hover:text-green-400 transition-colors">
-                About
-              </a>
-              <a href="#" className="hover:text-green-400 transition-colors">
-                Uses
-              </a>
-              <a href="#" className="hover:text-green-400 transition-colors">
-                Contact
-              </a>
-            </nav> */}
           </motion.div>
 
           <motion.h1
@@ -176,35 +155,37 @@ const HomePage = () => {
           </motion.h1>
 
           <motion.div variants={itemVariants} {...fadeIn} className="mb-8">
-            <h2 className="text-2xl font-bold">Welcome.</h2>
-            <p className="mt-2">To my humble abode.</p>
+            <h2 className="text-2xl font-bold">Hello there 👋</h2>
+            {/* <p className="mt-2">To my humble abode.</p> */}
             <p className="mt-4">
-              You stumbled upon my blog I am{" "}
-              <span className="font-bold">Marc Backes</span>, Dev Team Lead at
-              talkevent Software, and a full-stack developer mainly using Vue,
-              Nuxt, and Node.
+              I'm <span className="font-bold">Sylvester Sila</span> a full-stack
+              developer with a passion for creating precise and efficient
+              software.
             </p>
             <p className="mt-4">
-              Stay and browse around if you're interested in{" "}
-              <span className="font-bold">tech & coding</span>.
-            </p>
-            <p className="mt-4">
-              You're probably not interested, but for accountability, I keep
-              public track of my{" "}
+              I have an interest in{" "}
               <span className="font-bold text-pink-500">
-                goals and progress
-              </span>{" "}
-              for this year.
+                {" "}
+                solving problems{" "}
+              </span>
+              and learning from them as well as{" "}
+              <span className="font-bold text-pink-500"> learning </span> new
+              technologies and in expanding my skill set.
             </p>
             <p className="mt-4">
-              I've also made a 2024{" "}
-              <span className="font-bold text-pink-500">bingo card</span> with
-              things that I predict that will happen.
+              Some of my projects listed below but be sure to check out my{" "}
+              <a
+                href="https://github.com/samh7"
+                className="font-bold text-pink-500"
+              >
+                Github
+              </a>{" "}
+              for more.
             </p>
           </motion.div>
 
           <motion.div variants={itemVariants} {...fadeIn} className="mb-8">
-            <h2 className="text-2xl font-bold">Stack</h2>
+            <h2 className="text-2xl font-bold">Languages & Tools</h2>
             <div className="mt-4 flex flex-wrap gap-4">
               {stackItems.map((item, index) => (
                 <motion.div
@@ -233,11 +214,11 @@ const HomePage = () => {
           {/* <TheVeldt /> */}
         </div>
       </div>
-{/*       
+      {/*       
       <div className="mb-8">
         <BeautyAndTerror />
       </div> */}
-      
+
       <Footer variants={itemVariants} fadeIn={fadeIn} />
     </div>
   );

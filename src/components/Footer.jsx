@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaTwitter, FaGithub, FaLinkedin, FaChevronUp } from "react-icons/fa";
+import { GiMailbox } from "react-icons/gi";
+import { SiGithub, SiGmail, SiLinkedin } from "react-icons/si";
+import { BiLogoGmail } from "react-icons/bi";
 
 const Footer = ({ fadeIn }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -86,29 +89,29 @@ const Footer = ({ fadeIn }) => {
           transition={{ duration: 0.3 }}
         >
           <p className="mt-2  mix-blend-difference">
-            © 2024 Sylvester Sila. All rights reserved.
+            © All rights reserved. {new Date().getFullYear()}
           </p>
           <div className="mt-4 flex justify-center space-x-4">
             <a
-              href="#"
+              href="https://mailto:sylvestersila6@gmail.com"
               className=" hover:text-green-400 transition-colors"
               onClick={handleIconClick}
             >
-              <FaTwitter size={20} />
+              <SiGmail size={20} />
             </a>
             <a
-              href="#"
+              href="https://github.com/samh7"
               className=" hover:text-green-400 transition-colors"
               onClick={handleIconClick}
             >
-              <FaGithub size={20} />
+              <SiGithub size={20} />
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/sylvester-sila1"
               className=" hover:text-green-400 transition-colors"
               onClick={handleIconClick}
             >
-              <FaLinkedin size={20} />
+              <SiLinkedin size={20} />
             </a>
           </div>
         </motion.div>
