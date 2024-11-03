@@ -13,7 +13,7 @@ const Footer = ({ fadeIn }) => {
     const handleScroll = () => {
       const scrollPosition = window.innerHeight + window.scrollY;
       const bodyHeight = document.body.offsetHeight;
-      const isBottom = scrollPosition >= bodyHeight - 50; // 50px threshold
+      const isBottom = scrollPosition >= bodyHeight - 100; // 50px threshold
       const isScrollingUp = window.scrollY < lastScrollY;
 
       setIsAtBottom(isBottom);
@@ -84,7 +84,9 @@ const Footer = ({ fadeIn }) => {
           animate={{ opacity: isExpanded ? 1 : 0 }}
           transition={{ duration: 0.3 }}
         >
-          <p className="mt-2 mix-blend-difference">© Copyright {new Date().getFullYear()}. All rights reserved.</p>
+          <p className="mt-2 mix-blend-difference">
+            © Copyright {new Date().getFullYear()}. All rights reserved.
+          </p>
           <div className="mt-4 flex justify-center space-x-4">
             <a
               href="mailto:sylvestersila6@gmail.com"
