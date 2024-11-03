@@ -13,7 +13,7 @@ const Footer = ({ fadeIn }) => {
     const handleScroll = () => {
       const scrollPosition = window.innerHeight + window.scrollY;
       const bodyHeight = document.body.offsetHeight;
-      const isBottom = scrollPosition >= bodyHeight - 100; // 50px threshold
+      const isBottom = scrollPosition >= bodyHeight - 70; // 50px threshold
       const isScrollingUp = window.scrollY < lastScrollY;
 
       setIsAtBottom(isBottom);
@@ -45,8 +45,7 @@ const Footer = ({ fadeIn }) => {
   };
 
   const handleIconClick = (e) => {
-    e.stopPropagation(); // Prevent event from bubbling up
-    // Remove the preventDefault to allow the default link behavior
+    e.stopPropagation();
   };
 
   return (
