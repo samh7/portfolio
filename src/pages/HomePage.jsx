@@ -40,6 +40,7 @@ import onlineEditor from "../assets/projects/online-editor.png";
 import rhythmPlayer from "../assets/projects/rhythmPlayer.png";
 import liuShan from "../assets/profile/liu-shan.jpg";
 import BeautyAndTerror from "../components/BeautyAndTerror";
+import Contact from "../components/Contact";
 
 const HomePage = () => {
   const fadeIn = {
@@ -58,7 +59,6 @@ const HomePage = () => {
     { name: "C#", icon: <SiCsharp /> },
     { name: "DotNet", icon: <SiDotnet /> },
     { name: "Python", icon: <SiPython /> },
-    // {}
   ];
 
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -88,14 +88,7 @@ const HomePage = () => {
       description:
         "An online store built with plain JS and HTML that allows users to browse and purchase clothes. It includes features such as a shopping cart and a checkout process.",
       image: eShop,
-      technologies: [
-        SiJavascript,
-        SiTailwindcss,
-        // SiNetlify,
-        // SiDocker,
-        // SiGraphql,
-        // SiExpress,
-      ],
+      technologies: [SiJavascript, SiTailwindcss],
       live: "https://samh7.github.io/online-shop/",
       code: "https://github.com/samh7/online-shop",
     },
@@ -130,7 +123,11 @@ const HomePage = () => {
     },
   ];
 
-  const [showTooltip, setShowTooltip] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const toggleProfilePicture = () => {
+    setIsExpanded(!isExpanded);
+  };
 
   return (
     <div className="bg-gradient-to-br from-gray-900 to-black text-white font-roboto min-h-screen pb-20">
@@ -141,8 +138,117 @@ const HomePage = () => {
             {...fadeIn}
             className="flex justify-between items-center mb-8"
           >
-            <div className="flex items-center relative">
-              <img src={liuShan} alt="LiuShan" className="rounded-xl mr-4" />
+            <div className="flex items-center relative flex-wrap">
+              <motion.img
+                onClick={toggleProfilePicture}
+                src={liuShan}
+                alt="LiuShan"
+                layout="position"
+                transition={{ 
+                  duration: 0.5,
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 20
+                }}
+                className={`cursor-pointer transition-all duration-500 object-cover
+                  ${isExpanded 
+                    ? "w-full rounded-xl aspect-video object-center" 
+                    : "w-[200px] rounded-full aspect-square object-right"
+                  }`}
+              />
+              
+              <motion.div
+                layout="position"
+                transition={{ 
+                  layout: {
+                    duration: 0.5,
+                    type: "spring",
+                    stiffness: 100,
+                    damping: 20
+                  }
+                }}
+                className={`relative p-6 bg-gradient-to-r from-gray-900/50 to-black/50 
+                  rounded-xl border border-gray-800 backdrop-blur-sm shadow-xl
+                  transition-all duration-500
+                  ${isExpanded 
+                    ? "w-full mt-4" 
+                    : "flex-1 ml-4"
+                  }`}
+              >
+                <motion.div 
+                  layout="position"
+                  transition={{ 
+                    layout: {
+                      duration: 0.5,
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 20
+                    }
+                  }}
+                  className="absolute -top-4 left-4"
+                >
+                  <span className="text-blue-400 text-xl">❝</span>
+                </motion.div>
+
+                <motion.div
+                  layout="position"
+                  transition={{ 
+                    layout: {
+                      duration: 0.5,
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 20
+                    }
+                  }}
+                  className="text-gray-300 text-lg font-light leading-relaxed italic text-center px-8"
+                >
+                  Courage is the most important of all the virtues, because
+                  without courage you can't practice any other virtue
+                  consistently.
+                </motion.div>
+
+                <motion.div 
+                  layout="position"
+                  transition={{ 
+                    layout: {
+                      duration: 0.5,
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 20
+                    }
+                  }}
+                  className="mt-4 text-right text-gray-400 font-medium"
+                >
+                  <motion.div
+                    layout="position"
+                    transition={{ 
+                      layout: {
+                        duration: 0.5,
+                        type: "spring",
+                        stiffness: 100,
+                        damping: 20
+                      }
+                    }}
+                  >
+                    — Maya Angelou
+                  </motion.div>
+                </motion.div>
+
+                <motion.div 
+                  layout="position"
+                  transition={{ 
+                    layout: {
+                      duration: 0.5,
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 20
+                    }
+                  }}
+                  className="absolute -bottom-3 right-4"
+                >
+                  <span className="text-blue-400 text-xl">❞</span>
+                </motion.div>
+              </motion.div>
             </div>
           </motion.div>
 
@@ -210,7 +316,16 @@ const HomePage = () => {
               ))}
             </div>
           </motion.div>
-
+          <div>
+            <motion.h2
+              initial={{ y: -20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              className="text-3xl font-bold mb-8 text-white"
+            >
+              Let's Connect
+            </motion.h2>
+            <Contact />
+          </div>
           {/* <TheVeldt /> */}
         </div>
       </div>

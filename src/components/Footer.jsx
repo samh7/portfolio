@@ -50,7 +50,7 @@ const Footer = ({ fadeIn }) => {
   };
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 flex justify-center items-center p-4">
+    <div className="fixed bottom-0  left-0 right-0 flex justify-center items-center p-4">
       <motion.footer
         layout
         initial={{ borderRadius: 20, width: "40px", height: "40px" }}
@@ -67,7 +67,7 @@ const Footer = ({ fadeIn }) => {
           duration: 0.5,
           ease: [0.19, 1, 0.22, 1],
         }}
-        className="backdrop-blur-md text-white text-center overflow-hidden shadow-lg relative"
+        className="backdrop-blur-md border border-white/10 text-white text-center overflow-hidden shadow-lg relative"
         onClick={toggleExpanded}
       >
         <motion.div
