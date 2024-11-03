@@ -150,7 +150,7 @@ const HomePage = () => {
                   stiffness: 100,
                   damping: 20
                 }}
-                className={`cursor-pointer transition-all duration-500 object-cover
+                className={`cursor-pointer my-2 mb-3 transition-all duration-500 object-cover
                   ${isExpanded 
                     ? "w-full rounded-xl aspect-video object-center" 
                     : "w-[200px] rounded-full aspect-square object-right"
@@ -158,96 +158,43 @@ const HomePage = () => {
               />
               
               <motion.div
-                layout="position"
+                layout
+                initial={false}
                 transition={{ 
-                  layout: {
-                    duration: 0.5,
-                    type: "spring",
-                    stiffness: 100,
-                    damping: 20
-                  }
+                  type: "tween",
+                  ease: "easeInOut",
+                  duration: 0.3
                 }}
                 className={`relative p-6 bg-gradient-to-r from-gray-900/50 to-black/50 
-                  rounded-xl border border-gray-800 backdrop-blur-sm shadow-xl
-                  transition-all duration-500
+                  rounded-xl border border-gray-800 backdrop-blur-sm shadow-xl flex flex-col justify-center
                   ${isExpanded 
                     ? "w-full mt-4" 
-                    : "flex-1 ml-4"
+                    : "ml-4 flex-1 min-w-[300px]"
                   }`}
               >
-                <motion.div 
-                  layout="position"
-                  transition={{ 
-                    layout: {
-                      duration: 0.5,
-                      type: "spring",
-                      stiffness: 100,
-                      damping: 20
-                    }
-                  }}
-                  className="absolute -top-4 left-4"
-                >
+                <div className="absolute -top-4 left-4">
                   <span className="text-blue-400 text-xl">❝</span>
-                </motion.div>
+                </div>
 
-                <motion.div
-                  layout="position"
-                  transition={{ 
-                    layout: {
-                      duration: 0.5,
-                      type: "spring",
-                      stiffness: 100,
-                      damping: 20
-                    }
-                  }}
-                  className="text-gray-300 text-lg font-light leading-relaxed italic text-center px-8"
-                >
-                  Courage is the most important of all the virtues, because
-                  without courage you can't practice any other virtue
-                  consistently.
-                </motion.div>
+                <div className="flex flex-col justify-between h-full">
+                  <div className="text-gray-300 text-lg font-light leading-relaxed italic">
+                    <span className="line-clamp-3">
+                      Courage is the most important of all the virtues, because
+                      without courage you can't practice any other virtue
+                      consistently.
+                    </span>
+                  </div>
 
-                <motion.div 
-                  layout="position"
-                  transition={{ 
-                    layout: {
-                      duration: 0.5,
-                      type: "spring",
-                      stiffness: 100,
-                      damping: 20
-                    }
-                  }}
-                  className="mt-4 text-right text-gray-400 font-medium"
-                >
-                  <motion.div
-                    layout="position"
-                    transition={{ 
-                      layout: {
-                        duration: 0.5,
-                        type: "spring",
-                        stiffness: 100,
-                        damping: 20
-                      }
-                    }}
-                  >
-                    — Maya Angelou
-                  </motion.div>
-                </motion.div>
+                  <div className="mt-4 text-right text-gray-400 font-medium">
+                    <div>
+                      — Maya Angelou
+                    </div>
+                  </div>
+                </div>
 
-                <motion.div 
-                  layout="position"
-                  transition={{ 
-                    layout: {
-                      duration: 0.5,
-                      type: "spring",
-                      stiffness: 100,
-                      damping: 20
-                    }
-                  }}
-                  className="absolute -bottom-3 right-4"
-                >
+                <div className="absolute -bottom-3 right-4">
                   <span className="text-blue-400 text-xl">❞</span>
-                </motion.div>
+                </div>
               </motion.div>
             </div>
           </motion.div>
