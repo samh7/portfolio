@@ -13,7 +13,7 @@ const Footer = ({ fadeIn }) => {
     const handleScroll = () => {
       const scrollPosition = window.innerHeight + window.scrollY;
       const bodyHeight = document.body.offsetHeight;
-      const isBottom = scrollPosition >= bodyHeight - 55; // 50px threshold
+      const isBottom = scrollPosition >= bodyHeight - 53; // 50px threshold
       const isScrollingUp = window.scrollY < lastScrollY;
 
       setIsAtBottom(isBottom);
