@@ -54,6 +54,7 @@ const ProjectSection = ({ project }) => {
       {/* Right Section */}
       <div className="w-full order-1 sm:order-2 object-start sm:w-[55%] h-[240px] sm:h-[220px] overflow-hidden">
         <img
+          loading="lazy"
           src={project.image}
           alt={project.title}
           className="w-full h-full sm:hover:rotate-[-8deg] sm:ml-12 sm:mt-12 sm:rounded-md bg-[transparent] object-cover 
