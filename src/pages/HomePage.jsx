@@ -267,7 +267,7 @@ const HomePage = () => {
             <motion.h2
               initial={{ y: -20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              className="text-3xl font-bold mb-8 text-white"
+              className="text-2xl font-bold mb-8 text-white"
             >
               Let's Connect
             </motion.h2>
