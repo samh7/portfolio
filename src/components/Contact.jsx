@@ -27,8 +27,6 @@ export default function Contact() {
     )}&body=${encodeURIComponent(
       `Name: ${formData.name}
 Phone: ${formData.phone}
-Email: ${formData.email}
-
 Message:
 ${formData.message}`
     )}`;
