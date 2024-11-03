@@ -84,7 +84,7 @@ const Footer = ({ fadeIn }) => {
           animate={{ opacity: isExpanded ? 1 : 0 }}
           transition={{ duration: 0.3 }}
         >
-          <p className="mt-2 mix-blend-difference">© All rights reserved.</p>
+          <p className="mt-2 mix-blend-difference">© Copyright {new Date().getFullYear()}. All rights reserved.</p>
           <div className="mt-4 flex justify-center space-x-4">
             <a
               href="mailto:sylvestersila6@gmail.com"
