@@ -13,6 +13,7 @@ import {
   SiSqlite,
   SiElixir,
   SiExpress,
+  SiPhp,
   SiTypescript,
   SiTailwindcss,
   SiNetlify,
@@ -26,6 +27,7 @@ import {
   SiDotnet,
   SiJavascript,
   SiReact,
+  SiHtml5,
 } from "react-icons/si";
 import ProjectSection from "../components/ProjectSection";
 import TheVeldt from "../components/TheVeldt";
@@ -42,6 +44,9 @@ import liuShan from "../assets/profile/liu-shan.jpg";
 import BeautyAndTerror from "../components/BeautyAndTerror";
 import Contact from "../components/Contact";
 
+import PhillyShop from "../assets/projects/PhillyShop.png";
+import AzyleaShop from "../assets/projects/azyleaShop.png";
+
 const HomePage = () => {
   const fadeIn = {
     initial: { opacity: 0, y: 20 },
@@ -56,7 +61,8 @@ const HomePage = () => {
     { name: "Tailwind CSS", icon: <SiTailwindcss /> },
     { name: "PostgreSQL", icon: <SiPostgresql /> },
     { name: "Elixir", icon: <SiElixir /> },
-    { name: "C#", icon: <SiCsharp /> },
+    // { name: "C#", icon: <SiCsharp /> },
+    { name: "PHP", icon: <SiPhp /> },
     { name: "DotNet", icon: <SiDotnet /> },
     { name: "Python", icon: <SiPython /> },
   ];
@@ -88,27 +94,26 @@ const HomePage = () => {
       description:
         "An online store built with plain JS and HTML that allows users to browse and purchase clothes. It includes features such as a shopping cart and a checkout process.",
       image: eShop,
-      technologies: [SiJavascript, SiTailwindcss],
+      technologies: [SiHtml5, SiJavascript, SiTailwindcss],
       live: "https://samh7.github.io/online-shop/",
       code: "https://github.com/samh7/online-shop",
     },
 
     {
-      title: "OnLineEditor",
+      title: "A-ZyLea Shop",
       description:
-        "An online code editor built with plain JS, HTML, and CSS. It allows users to write, run, and save code snippets.",
-      image: onlineEditor,
-      technologies: [SiJavascript, SiTailwindcss],
-      live: "https://samh7.github.io/online-editor",
-      code: "https://github.com/samh7/online-editor",
+        "A one stop online shop platform offering a wide range of custom tailor made clothes for for both men and women.",
+      image: AzyleaShop,
+      technologies: [SiReact, SiJavascript, SiTailwindcss],
+      live: "https://ezzshop.netlify.app",
+      code: "",
     },
-
     {
       title: "Simple Music Player",
       description:
         "A simple music player built with plain JS, HTML, and CSS. It allows users to play, pause, and skip songs.",
       image: musicPlayer,
-      technologies: [SiJavascript, SiTailwindcss],
+      technologies: [SiHtml5, SiJavascript, SiTailwindcss],
       live: "https://samh7.github.io/music_player/",
       code: "https://github.com/samh7/music_player",
     },
@@ -117,8 +122,17 @@ const HomePage = () => {
       description:
         "A  music player app built with React and Tailwind CSS. It allows users to add song to queue as well as play, pause, repeat, shuffle and skip them.",
       image: rhythmPlayer,
-      technologies: [SiJavascript, SiReact, SiTailwindcss],
+      technologies: [SiReact, SiJavascript, SiTailwindcss],
       live: "https://rythm-player.netlify.app/",
+      code: "",
+    },
+    {
+      title: "PhillyShop",
+      description:
+        "A  Shop inspired by the show It's Always Sunny in Philadelphia",
+      image: PhillyShop,
+      technologies: [SiReact, SiJavascript, SiTailwindcss],
+      live: "https://samh7.github.io/always-sunny-shop/",
       code: "",
     },
   ];
@@ -155,7 +169,7 @@ const HomePage = () => {
                   ${
                     isExpanded
                       ? "w-full rounded-xl aspect-video object-center"
-                      : "w-[200px] rounded-full aspect-square object-right"
+                      : "w-[200px] rounded-xl aspect-square object-right"
                   }`}
               />
 
