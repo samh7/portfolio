@@ -4,7 +4,6 @@ import Deprecation from "./components/Deprecation";
 export default function App() {
   return (
     <div>
-      {/* <Deprecation /> */}
       <HomePage />
     </div>
   );

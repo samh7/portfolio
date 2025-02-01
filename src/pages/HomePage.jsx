@@ -3,50 +3,36 @@ import { motion } from "framer-motion";
 import {
   FaReact,
   FaNodeJs,
-  FaJs,
-  FaDatabase,
-  FaInfoCircle,
 } from "react-icons/fa";
 
 import {
   SiCsharp,
   SiSqlite,
   SiElixir,
-  SiExpress,
   SiPhp,
   SiTypescript,
   SiTailwindcss,
   SiNetlify,
   SiDocker,
   SiGraphql,
+  SiAngular,
   SiPython,
   SiMongodb,
-  SiTensorflow,
-  SiElectron,
   SiPostgresql,
   SiDotnet,
-  SiJavascript,
-  SiReact,
-  SiHtml5,
+  SiNestjs,
+  SiTrpc,
+  SiPnpm,
+  SiGithubactions,
+  SiMysql,
+  SiXampp,
+  SiLinux,
+  SiWindows,
+  SiNextdotjs,
 } from "react-icons/si";
-import ProjectSection from "../components/ProjectSection";
-import TheVeldt from "../components/TheVeldt";
 import Footer from "../components/Footer";
-
-import eShop from "../assets/projects/e-shop-1.png";
-import sunnyShop from "../assets/projects/sunny-shop.png";
-import facebookUi from "../assets/projects/facebook-ui.png";
-import musicPlayer from "../assets/projects/music-player.png";
-import ytUi from "../assets/projects/yt-ui.png";
-import onlineEditor from "../assets/projects/online-editor.png";
-import rhythmPlayer from "../assets/projects/rhythmPlayer.png";
-import liuShan from "../assets/profile/liu-shan.jpg";
-import BeautyAndTerror from "../components/BeautyAndTerror";
+import sila from "../assets/profile/sila.jpg";
 import Contact from "../components/Contact";
-
-import PhillyShop from "../assets/projects/PhillyShop.png";
-import AzyleaShop from "../assets/projects/azyleaShop.png";
-
 const HomePage = () => {
   const fadeIn = {
     initial: { opacity: 0, y: 20 },
@@ -55,16 +41,32 @@ const HomePage = () => {
   };
 
   const stackItems = [
-    { name: "JavaScript", icon: <FaJs /> },
+    { name: "Typescript", icon: <SiTypescript /> },
+    { name: "Angular", icon: <SiAngular /> },
     { name: "React", icon: <FaReact /> },
+    { name: "NextJs", icon: <SiNextdotjs /> },
+    { name: "NestJs", icon: <SiNestjs /> },
+    { name: "TRPC", icon: <SiTrpc /> },
+    { name: "Graphql", icon: <SiGraphql /> },
+    { name: "Netlify", icon: <SiNetlify /> },
+    { name: "Pnpm", icon: <SiPnpm /> },
+    { name: "Github Actions", icon: <SiGithubactions /> },
+    { name: "Mysql", icon: <SiMysql /> },
+    { name: "XAMPP", icon: <SiXampp /> },
+    { name: "Linux", icon: <SiLinux /> },
+    { name: "Windows", icon: <SiWindows /> },
+    { name: "Docker", icon: <SiDocker /> },
+    { name: "MongoDB", icon: <SiMongodb /> },
+    { name: "Unit & Integration Testing", icon: < ></> },
     { name: "Node.js", icon: <FaNodeJs /> },
     { name: "Tailwind CSS", icon: <SiTailwindcss /> },
     { name: "PostgreSQL", icon: <SiPostgresql /> },
     { name: "Elixir", icon: <SiElixir /> },
-    // { name: "C#", icon: <SiCsharp /> },
     { name: "PHP", icon: <SiPhp /> },
     { name: "DotNet", icon: <SiDotnet /> },
     { name: "Python", icon: <SiPython /> },
+    { name: "C#", icon: <SiCsharp /> },
+    { name: "Sqlite", icon: <SiSqlite /> },
   ];
 
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -88,55 +90,6 @@ const HomePage = () => {
     setMousePosition({ x, y });
   };
 
-  const projects = [
-    {
-      title: "Shoppie",
-      description:
-        "An online store built with plain JS and HTML that allows users to browse and purchase clothes. It includes features such as a shopping cart and a checkout process.",
-      image: eShop,
-      technologies: [SiHtml5, SiJavascript, SiTailwindcss],
-      live: "https://samh7.github.io/online-shop/",
-      code: "https://github.com/samh7/online-shop",
-    },
-
-    {
-      title: "A-ZyLea Shop",
-      description:
-        "A one stop online shop platform offering a wide range of custom tailor made clothes for for both men and women.",
-      image: AzyleaShop,
-      technologies: [SiReact, SiJavascript, SiTailwindcss],
-      live: "https://ezzshop.netlify.app",
-      code: "",
-    },
-    {
-      title: "Simple Music Player",
-      description:
-        "A simple music player built with plain JS, HTML, and CSS. It allows users to play, pause, and skip songs.",
-      image: musicPlayer,
-      technologies: [SiHtml5, SiJavascript, SiTailwindcss],
-      live: "https://samh7.github.io/music_player/",
-      code: "https://github.com/samh7/music_player",
-    },
-    {
-      title: "Rhythm Player",
-      description:
-        "A  music player app built with React and Tailwind CSS. It allows users to add song to queue as well as play, pause, repeat, shuffle and skip them.",
-      image: rhythmPlayer,
-      technologies: [SiReact, SiJavascript, SiTailwindcss],
-      live: "https://rythm-player.netlify.app/",
-      code: "",
-    },
-    {
-      title: "PhillyShop",
-      description:
-        "A  Shop inspired by the show It's Always Sunny in Philadelphia",
-      image: PhillyShop,
-      technologies: [SiReact, SiJavascript, SiTailwindcss],
-      live: "https://samh7.github.io/always-sunny-shop/",
-      code: "",
-    },
-  ];
-
   const [isExpanded, setIsExpanded] = useState(false);
 
   const toggleProfilePicture = () => {
@@ -155,8 +108,8 @@ const HomePage = () => {
             <div className="flex items-center relative flex-wrap">
               <motion.img
                 onClick={toggleProfilePicture}
-                src={liuShan}
-                alt="LiuShan"
+                src={sila}
+                alt="sila"
                 layout="position"
                 transition={{
                   duration: 0.5,
@@ -166,10 +119,9 @@ const HomePage = () => {
                 }}
                 loading="lazy"
                 className={`cursor-pointer my-2 mb-3 transition-all duration-500 object-cover
-                  ${
-                    isExpanded
-                      ? "w-full rounded-xl aspect-video object-center"
-                      : "w-[200px] rounded-xl aspect-square object-right"
+                  ${isExpanded
+                    ? "w-full rounded-xl aspect-square object-cover"
+                    : "w-[200px] rounded-xl aspect-square object-right"
                   }`}
               />
 
@@ -191,7 +143,7 @@ const HomePage = () => {
 
                 <div className="flex flex-col justify-between h-full">
                   <div className="text-gray-300 text-lg font-light leading-relaxed italic">
-                    <span className="line-clamp-3">
+                    <span className="line-clamp-3 text-sm font-bold">
                       Courage is the most important of all the virtues, because
                       without courage you can't practice any other virtue
                       consistently.
@@ -213,17 +165,16 @@ const HomePage = () => {
           <motion.h1
             variants={itemVariants}
             {...fadeIn}
-            className="text-4xl font-bold h-24 sm:h-12  mt-8 mb-8 bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent"
+            className="text-4xl font-bold h-24 sm:h-24  mt-8 mb-8 bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent"
           >
-            Sylvester Sila / Software Engineer
+            Sila Mwinzi / Fullstack Software Developer
           </motion.h1>
 
           <motion.div variants={itemVariants} {...fadeIn} className="mb-8">
             <h2 className="text-2xl font-bold">Hello there 👋</h2>
-            {/* <p className="mt-2">To my humble abode.</p> */}
             <p className="mt-4">
               I'm <span className="font-bold">Sylvester Sila</span> a full-stack
-              developer with a passion for creating precise and efficient
+              developer with a passion for creating precise, beautiful and efficient
               software.
             </p>
             <p className="mt-4">
@@ -236,8 +187,8 @@ const HomePage = () => {
               <span className="font-bold text-pink-500"> learning </span> new
               technologies and in expanding my skill set.
             </p>
-            <p className="mt-4">
-              Some of my projects listed below but be sure to check out my{" "}
+            <p className="mt-4 text-xl italic font-bold">
+              Be sure to check out my{" "}
               <a
                 href="https://github.com/samh7"
                 className="font-bold text-pink-500"
@@ -248,7 +199,10 @@ const HomePage = () => {
             </p>
           </motion.div>
 
-          <motion.div variants={itemVariants} {...fadeIn} className="mb-8">
+          <motion.div variants={itemVariants} {...fadeIn}
+
+            className="mb-8">
+
             <h2 className="text-2xl font-bold">Languages & Tools</h2>
             <div className="mt-4 flex flex-wrap gap-4">
               {stackItems.map((item, index) => (
@@ -264,36 +218,27 @@ const HomePage = () => {
                 </motion.div>
               ))}
             </div>
+
+
           </motion.div>
 
-          <motion.div variants={itemVariants} {...fadeIn} className="mb-8">
-            <h2 className="text-2xl font-bold mb-4">Projects</h2>
-            <div className="space-y-6">
-              {projects.map((project, index) => (
-                <ProjectSection key={index} project={project} />
-              ))}
-            </div>
-          </motion.div>
           <div>
             <motion.h2
               initial={{ y: -20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               className="text-2xl font-bold mb-8 text-white"
             >
-              Let's Connect
+              Reach out to me
             </motion.h2>
             <Contact />
           </div>
-          {/* <TheVeldt /> */}
         </div>
       </div>
-      {/*       
-      <div className="mb-8">
-        <BeautyAndTerror />
-      </div> */}
 
       <Footer variants={itemVariants} fadeIn={fadeIn} />
+
     </div>
+
   );
 };
 

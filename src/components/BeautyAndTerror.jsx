@@ -46,7 +46,7 @@ const BeautyAndTerror = () => {
   );
 
   return (
-    <div ref={containerRef} style={{ height: '600px' }} className="relative w-[87vw] max-w-[600px] mx-auto">
+    <div ref={containerRef} style={{ height: '300px' }} className="relative w-[87vw] max-w-[600px] mx-auto">
       <motion.div
         className="bg-gray-900 text-white shadow-lg overflow-hidden"
         style={{

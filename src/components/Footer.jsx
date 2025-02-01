@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { FaChevronUp } from "react-icons/fa";
-import { SiGithub, SiGmail, SiLinkedin } from "react-icons/si";
+import { FaChevronUp, FaHeart } from "react-icons/fa";
+import { Si1Panel, Si2Fas, SiGithub, SiGmail, SiLinkedin, SiReact } from "react-icons/si";
 
 const Footer = ({ fadeIn }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -83,16 +83,16 @@ const Footer = ({ fadeIn }) => {
           animate={{ opacity: isExpanded ? 1 : 0 }}
           transition={{ duration: 0.3 }}
         >
-          <p className="mt-2 mix-blend-difference">
-            © Copyright {new Date().getFullYear()}. All rights reserved.
-          </p>
+          <div className="mt-2 flex items-center  justify-center  mix-blend-difference">
+            Made using <SiReact className="mx-5 text-3xl text-blue-500" /> with <FaHeart className="mx-5 text-3xl text-red-600" />
+          </div>
           <div className="mt-4 flex justify-center space-x-4">
             <a
               href="mailto:sylvestersila6@gmail.com"
               className="hover:text-green-400 transition-colors"
               onClick={handleIconClick}
               target="_blank"
-              // rel="noopener noreferrer"
+            // rel="noopener noreferrer"
             >
               <SiGmail size={20} />
             </a>
@@ -101,7 +101,7 @@ const Footer = ({ fadeIn }) => {
               className="hover:text-green-400 transition-colors"
               onClick={handleIconClick}
               target="_blank"
-              // rel="noopener noreferrer"
+            // rel="noopener noreferrer"
             >
               <SiGithub size={20} />
             </a>
@@ -110,7 +110,7 @@ const Footer = ({ fadeIn }) => {
               className="hover:text-green-400 transition-colors"
               onClick={handleIconClick}
               target="_blank"
-              // rel="noopener noreferrer"
+            // rel="noopener noreferrer"
             >
               <SiLinkedin size={20} />
             </a>
