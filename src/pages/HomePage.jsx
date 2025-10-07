@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   FaReact,
@@ -69,8 +69,6 @@ const HomePage = () => {
     { name: "Sqlite", icon: <SiSqlite /> },
   ];
 
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
@@ -81,13 +79,6 @@ const HomePage = () => {
         stiffness: 100,
       },
     },
-  };
-  const handleMouseMove = (event, projectIndex) => {
-    const { left, top, width, height } =
-      event.currentTarget.getBoundingClientRect();
-    const x = (event.clientX - left) / width;
-    const y = (event.clientY - top) / height;
-    setMousePosition({ x, y });
   };
 
   const [isExpanded, setIsExpanded] = useState(false);
@@ -145,7 +136,7 @@ const HomePage = () => {
                   <div className="text-gray-300 text-lg font-light leading-relaxed italic">
                     <span className="line-clamp-3 text-sm font-bold">
                       Courage is the most important of all the virtues, because
-                      without courage you can't practice any other virtue
+                      without courage you can&apos;t practice any other virtue
                       consistently.
                     </span>
                   </div>
@@ -173,7 +164,7 @@ const HomePage = () => {
           <motion.div variants={itemVariants} {...fadeIn} className="mb-8">
             <h2 className="text-2xl font-bold">Hello there 👋</h2>
             <p className="mt-4">
-              I'm <span className="font-bold">Sylvester Sila</span> a full-stack
+              I&apos;m <span className="font-bold">Sylvester Sila</span> a full-stack
               developer with a passion for creating precise, beautiful and efficient
               software.
             </p>
@@ -235,7 +226,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      <Footer variants={itemVariants} fadeIn={fadeIn} />
+      <Footer variants={itemVariants} />
 
     </div>
 

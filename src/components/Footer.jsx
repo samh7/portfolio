@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaChevronUp, FaHeart } from "react-icons/fa";
-import { Si1Panel, Si2Fas, SiGithub, SiGmail, SiLinkedin, SiReact } from "react-icons/si";
+import { SiGithub, SiGmail, SiLinkedin, SiReact } from "react-icons/si";
 
-const Footer = ({ fadeIn }) => {
+const Footer = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isAtBottom, setIsAtBottom] = useState(false);
 
