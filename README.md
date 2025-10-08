@@ -1,8 +1,16 @@
-# React + Vite
+# Mantra
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Manifest Destiny
 
-Currently, two official plugins are available:
+> *"The future belongs to those who believe in the power of their dreams."*
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Core Principles
+
+- **Visualize** your desired outcome
+- **Believe** in your inherent power
+- **Act** with intention and purpose
+- **Persist** through challenges
+
+---
+
+*Embrace your power to create the future you envision*
